@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+}
+.my-card {
+    margin-right: 0.5rem;
+}
+.card-header {
+    margin-bottom: 1rem;
+}
