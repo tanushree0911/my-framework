@@ -33,3 +33,10 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
+
+:root {
+  @include mat.table-overrides((
+    row-item-container-height: 2.5rem,
+    header-headline-color: var(--mat-sys-on-tertiary-container)
+  ));
+}

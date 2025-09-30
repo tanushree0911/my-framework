@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 import { Home } from './components/home/home';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EditStoreAddressComponent } from './components/edit-store-address/edit-store-address.component';
 
 export const routes: Routes = [
     { path: '', component: Home }, // Default route
-    // { path: 'about', component: AboutComponent },
-    // { path: 'contact', component: ContactComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'editAddress', component: EditStoreAddressComponent },
     // { path: '**', component: NotFoundComponent }
 ];

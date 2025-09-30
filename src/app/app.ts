@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,8 @@ import { RouterOutlet } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    RouterModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -24,10 +25,11 @@ export class App {
   protected readonly title = signal('my-framework');
 
   protected readonly navs = [
-    'Home',
-    'Contact',
-    'Report',
-    'About'
+    {name: 'Home', link: ''},
+    {name: 'Dashboard', link: 'dashboard'},
+    {name: 'Contact', link: ''},
+    {name: 'Report', link: ''},
+    {name: 'About', link: ''},
   ];
 
   protected readonly isMobile = signal(true);

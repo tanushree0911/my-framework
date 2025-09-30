@@ -7,3 +7,6 @@ table {
 .card-header {
     margin-bottom: 1rem;
 }
+.mat-mdc-row .mat-mdc-cell {
+    cursor: pointer;
+}

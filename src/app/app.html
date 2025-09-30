@@ -10,7 +10,7 @@
                 [fixedInViewport]="isMobile()" fixedTopGap="56">
       <mat-nav-list>
         @for (nav of navs; track nav) {
-          <a mat-list-item>{{nav}}</a>
+          <a mat-list-item [routerLink]="nav.link">{{nav.name}}</a>
         }
       </mat-nav-list>
     </mat-sidenav>
