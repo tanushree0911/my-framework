@@ -27,9 +27,6 @@ export class EditStoreAddressComponent {
   activatedRoute = inject(ActivatedRoute);
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
-    // company: null,
-    // firstName: [null, Validators.required],
-    // lastName: [null, Validators.required],
     address: [null, Validators.required],
     address2: null,
     city: [null, Validators.required],
@@ -37,7 +34,6 @@ export class EditStoreAddressComponent {
     postalCode: [null, Validators.compose([
       Validators.required, Validators.minLength(5), Validators.maxLength(5)])
     ],
-    // shipping: ['free', Validators.required]
   });
 
   hasUnitNumber = false;
