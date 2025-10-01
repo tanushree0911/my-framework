@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { STORES } from '../../models/model';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -22,11 +24,12 @@ import { MatCardModule } from '@angular/material/card';
   ]
 })
 export class EditStoreAddressComponent {
+  activatedRoute = inject(ActivatedRoute);
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
+    // company: null,
+    // firstName: [null, Validators.required],
+    // lastName: [null, Validators.required],
     address: [null, Validators.required],
     address2: null,
     city: [null, Validators.required],
@@ -34,7 +37,7 @@ export class EditStoreAddressComponent {
     postalCode: [null, Validators.compose([
       Validators.required, Validators.minLength(5), Validators.maxLength(5)])
     ],
-    shipping: ['free', Validators.required]
+    // shipping: ['free', Validators.required]
   });
 
   hasUnitNumber = false;
@@ -100,6 +103,22 @@ export class EditStoreAddressComponent {
     {name: 'Wisconsin', abbreviation: 'WI'},
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
+  stores = STORES;
+  store: any;
+
+  constructor() {
+    const id = this.activatedRoute.params.subscribe({
+      next: (r: any) => {
+        this.store = this.stores.find((item: any) => item.id === Number(r.id));
+        this.addressForm.patchValue({
+          address: this.store.street,
+          city: this.store.name,
+          state: this.store.state,
+          postalCode: this.store.zip
+        })
+      }
+    })
+  }
 
   onSubmit(): void {
     alert('Thanks!');

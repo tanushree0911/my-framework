@@ -27,8 +27,8 @@ export class Home {
     this.dataSource.paginator = this.paginator;
   }
 
-  editAddress() {
-    this.route.navigateByUrl('editAddress');
+  editAddress(id: number) {
+    this.route.navigateByUrl(`editAddress/${id}`);
   }
   
 }
