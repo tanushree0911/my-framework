@@ -27,9 +27,9 @@ export class App {
   protected readonly navs = [
     {name: 'Home', link: ''},
     {name: 'Dashboard', link: 'dashboard'},
-    {name: 'Contact', link: ''},
-    {name: 'Report', link: ''},
-    {name: 'About', link: ''},
+    {name: 'Contact', link: 'none'},
+    {name: 'Report', link: 'none'},
+    {name: 'About', link: 'none'},
   ];
 
   protected readonly isMobile = signal(true);

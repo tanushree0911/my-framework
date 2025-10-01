@@ -34,9 +34,20 @@ body {
   margin: 0;
 }
 
+.saved {
+  background-color: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
 :root {
   @include mat.table-overrides((
     row-item-container-height: 2.5rem,
     header-headline-color: var(--mat-sys-on-tertiary-container)
+  ));
+
+  @include mat.form-field-overrides((
+    filled-container-color: var(--mat-sys-primary-fixed)
   ));
 }
